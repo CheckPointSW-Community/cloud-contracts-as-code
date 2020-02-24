@@ -1,11 +1,13 @@
 variable "organization" {
   type = string
   description = "The name of the organization managing these rulesets."
+  default = "Acme Corporation"
 }
 
 variable "contract_name" {
   type = string
   description = "The name of these rulesets."
+  default = "Cloud Contract v1.0"
 }
 
 # add AWS Dome9 id here, needed for compliance policy association
