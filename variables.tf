@@ -10,6 +10,11 @@ variable "contract_name" {
   default = "Cloud Contract v1.0"
 }
 
+# set to true if you want to build for AWS
+variable "use_aws" {
+  default = false
+}
+
 # add AWS Dome9 id here, needed for compliance policy association
 variable "aws_cloud_account_id" {
   default = ""
@@ -18,6 +23,11 @@ variable "aws_cloud_account_id" {
 # add AWS account number here, needed for compliance policy association
 variable "aws_account_number" {
   default = ""
+}
+
+# set to true if you want to build for Azure
+variable "use_azure" {
+  default = false
 }
 
 # add Azure Dome9 id here, needed for compliance policy association
@@ -42,6 +52,7 @@ variable "dome9_secret_key" {
 
 # add email recipient here
 variable "email_recipients" {
+  type = string
   default = ""
 }
 
