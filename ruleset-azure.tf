@@ -1,3 +1,6 @@
+##########################################
+############ Add Ruleset  ################
+##########################################
 resource "dome9_ruleset" "dome9_azure_ruleset" {
   count       = var.azure_cloud_account_id == "" ? 1 : 0
   name        = "var.organization} - var.contract_name - Azure Ruleset"
