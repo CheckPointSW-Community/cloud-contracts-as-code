@@ -1,11 +1,12 @@
 ##########################################
 ############ Add Ruleset  ################
 ##########################################
+
 resource "dome9_ruleset" "dome9_azure_ruleset" {
   count       = var.use_azure ? 1 : 0
   name        = "${var.organization} - ${var.contract_name} - Azure Ruleset"
   description = "Built and maintained with Terraform"
-  cloud_vendor = "Azure"
+  cloud_vendor = "azure"
   language = "en"
   hide_in_compliance = false
   is_template = false
@@ -14,7 +15,7 @@ resource "dome9_ruleset" "dome9_azure_ruleset" {
     name = "Storage Buckets with data classification 'secret' must always be encrypted"
     logic = "StorageAccount where tags contain [ key='data-classification' and value='secret' ] should have encryption.services with [ name='file' and enabled=true ]"
     severity = "Low"
-    description = "StorageAccount with data classification 'secret' should have encryption.services with [ name='file' and enabled=true ]"
+    description = "Ensure that Storage Accounts with data classification 'secret' have server side encryption at rest enabled to protect sensitive data."
   }
 }
 

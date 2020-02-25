@@ -1,11 +1,12 @@
 ##########################################
 ############ Add Ruleset  ################
 ##########################################
+
 resource "dome9_ruleset" "dome9_aws_ruleset" {
   count       = var.use_aws ? 1 : 0
   name        = "${var.organization} - ${var.contract_name} - AWS Ruleset"
   description = "Built and maintained with Terraform"
-  cloud_vendor = "AWS"
+  cloud_vendor = "aws"
   language = "en"
   hide_in_compliance = false
   is_template = false
