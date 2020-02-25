@@ -31,4 +31,9 @@ aws_account_number = ""
 use_azure = true
 azure_cloud_account_id = ""
 azure_account_subscription = ""
+
+### Google Settings, if applicable
+use_gcp = true
+azure_cloud_account_id = ""
+azure_account_subscription = ""
 ``` 
