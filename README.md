@@ -2,6 +2,11 @@
 
 Examples of using Dome9 Terraform Provider to build a Cloud Security Contract or Compliance Ruleset
 
+## Requirements
+
+-	[Terraform](https://www.terraform.io/downloads.html) 0.12.x
+-	[Terraform Dome9 Provider](https://www.terraform.io/docs/providers/dome9/) 1.17.0
+
 ## Sample Cloud Security Contract
 
 - Storage Buckets must always be encrypted
