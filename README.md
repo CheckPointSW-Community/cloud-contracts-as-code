@@ -5,7 +5,7 @@ Examples of using Dome9 Terraform Provider to build a Cloud Security Contract or
 ## Requirements
 
 -	[Terraform](https://www.terraform.io/downloads.html) 0.12.x
--	[Terraform Dome9 Provider](https://www.terraform.io/docs/providers/dome9/) 1.17.0
+-	[Terraform Dome9 Provider](https://www.terraform.io/docs/providers/dome9/) > 1.17.x
 
 ## Sample Cloud Security Contract
 
