@@ -11,9 +11,9 @@ resource "dome9_ruleset" "dome9_gcp_ruleset" {
   hide_in_compliance = false
   is_template = false
   rules {
-    # Storage Buckets must always be encrypted
-    name = "Storage Buckets must always be encrypted"
-    logic = "GcpSecurityGroup should not have inboundRules contain [ destinationPort=3389 and source='0.0.0.0/0' ]"
+    # Ensure that Cloud Storage bucket is not anonymously and/or publicly accessible
+    name = "Ensure that Cloud Storage bucket is not anonymously and/or publicly accessible"
+    logic = "StorageBucket should not have iamPolicy with [ bindings contain [ members contain-any [ $ in ( 'allUsers', 'allAuthenticatedUsers' ) ] ] ]"
     severity = "High"
     description = "Sample description"
   }
