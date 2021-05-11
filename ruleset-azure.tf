@@ -25,9 +25,8 @@ resource "dome9_ruleset" "dome9_azure_ruleset" {
 
 resource "dome9_continuous_compliance_policy" "dome9_azure_compliance_policy" {
   count       = var.use_azure ? 1 : 0
-  cloud_account_id    = var.azure_cloud_account_id
-  external_account_id = var.azure_account_subscription
-  bundle_id           = dome9_ruleset.dome9_azure_ruleset.*.id[count.index]
-  cloud_account_type  = "Azure"
+  target_id    = var.azure_target_id
+  target_type = "Azure"
+  ruleset_id           = dome9_ruleset.dome9_azure_ruleset.*.id[count.index]
   notification_ids    = [ dome9_continuous_compliance_notification.dome9_compliance_mail_notification.id ]
 }

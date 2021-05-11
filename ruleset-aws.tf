@@ -33,10 +33,12 @@ resource "dome9_ruleset" "dome9_aws_ruleset" {
 ##########################################
 
 resource "dome9_continuous_compliance_policy" "dome9_aws_compliance_policy" {
-  count       = var.use_aws ? 1 : 0
-  cloud_account_id    = var.aws_cloud_account_id
-  external_account_id = var.aws_account_number
-  bundle_id           = dome9_ruleset.dome9_aws_ruleset.*.id[count.index]
-  cloud_account_type  = "Aws"
-  notification_ids    = [ dome9_continuous_compliance_notification.dome9_compliance_mail_notification.id, dome9_continuous_compliance_notification.dome9_compliance_awscloudbot_notification.id ]
+  count            = var.use_aws ? 1 : 0
+  target_id        = var.aws_target_id
+  target_type      = "Aws"
+  ruleset_id       = dome9_ruleset.dome9_aws_ruleset.*.id[count.index]
+  notification_ids = [dome9_continuous_compliance_notification.dome9_compliance_mail_notification.id, dome9_continuous_compliance_notification.dome9_compliance_awscloudbot_notification.id]
 }
+
+
+
