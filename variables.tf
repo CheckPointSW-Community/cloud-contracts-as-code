@@ -14,7 +14,7 @@ variable "use_aws" {
   default = false
 }
 
-variable "aws_cloud_account_id" {
+variable "aws_target_id" {
   default = ""
 }
 
@@ -26,7 +26,7 @@ variable "use_azure" {
   default = false
 }
 
-variable "azure_cloud_account_id" {
+variable "azure_target_id" {
   default = ""
 }
 
@@ -38,7 +38,7 @@ variable "use_gcp" {
   default = false
 }
 
-variable "gcp_cloud_account_id" {
+variable "gcp_target_id" {
   default = ""
 }
 
